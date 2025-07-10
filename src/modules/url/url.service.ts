@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUrlDto } from './dto/create-url.dto';
 import { UpdateUrlDto } from './dto/update-url.dto';
-import { UidService } from 'src/services/uid/uid.service';
-import { DatabaseService } from 'src/database/database.service';
 import { ConfigService } from '@nestjs/config';
-import { FilterUrlsDto } from 'src/modules/url/dto/filter-urls.dto';
+import { FilterUrlsDto } from '@/modules/url/dto/filter-urls.dto';
+import { UidService } from '@/services/uid/uid.service';
+import { DatabaseService } from '@/database/database.service';
 
 @Injectable()
 export class UrlService {

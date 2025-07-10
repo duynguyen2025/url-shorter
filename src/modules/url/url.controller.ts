@@ -2,11 +2,11 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Res, Query, UseGuard
 import { UrlService } from './url.service';
 import { CreateUrlDto } from './dto/create-url.dto';
 import { UpdateUrlDto } from './dto/update-url.dto';
-import { UrlExistsPipe } from 'src/modules/url/pipes/url-exists/url-exists.pipe';
 import { Url } from '@prisma/client';
 import { Response } from 'express';
-import { FilterUrlsDto } from 'src/modules/url/dto/filter-urls.dto';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { AuthGuard } from '@/auth/auth.guard';
+import { FilterUrlsDto } from '@/modules/url/dto/filter-urls.dto';
+import { UrlExistsPipe } from '@/modules/url/pipes/url-exists/url-exists.pipe';
 @Controller()
 export class UrlController {
   constructor(private readonly urlService: UrlService) { }

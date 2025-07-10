@@ -124,3 +124,18 @@ touch src/modules/url/dto/filter-urls.dto.ts
 - The @Get(’:uid’) endpoint should be public, so we need to exclude this from the guard.
 - apply the guard to all methods except the findOne() method
   `@UseGuards(AuthGuard)`
+
+## Unit test
+
+- Jest ko hiểu alias path. cần config
+
+```json
+// package.json
+"jest": {
+  // ...existing config...
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/$1"
+  }
+}
+
+```

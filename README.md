@@ -137,5 +137,33 @@ touch src/modules/url/dto/filter-urls.dto.ts
     "^@/(.*)$": "<rootDir>/$1"
   }
 }
-
+// thêm vào jest-e2e.json
 ```
+
+## Integration testing
+
+- integration tests often care about both the end result and the side effects.
+- For example, an integration test for the “create URL” functionality would not only verify that the method returns a valid URL but also that a new URL record has been correctly inserted into the database.
+
+**setup test**
+
+- Before running all the tests, it creates a NestJS runtime with the Test class, importing the AppModule
+- Resets both the database and cache after each test
+- Exports the app (the NestJS runtime) and server (the HTTP server) so that we can easily use them in our tests
+
+- `url/url.service.int-spec.ts`
+
+## E2e testing
+
+- We’ve tested the service methods but we haven’t tested the API endpoints that call those service methods
+- We want to test that the endpoints return the correct status code and response body.
+- End-to-end tests are great for:
+  - testing the validation layers are working correctly (we have a UrlExistsPipe as well as some DTOs, so it’s good to test that these are working correctly)
+  - testing the response of the API endpoints (i.e. the HTTP response code and response body) are what we expect
+
+- Starting with the POST /url request, here are some scenarios worth testing:
+  - should return back the created URL
+  - should return a 400 if the payload is invalid
+  - should return a 401 if the API key is wrong
+- `app.e2e-spec.ts`
+- `supertest` package

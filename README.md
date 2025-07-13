@@ -1,3 +1,14 @@
+- [Setup](#setup)
+- [Business logic: creating a shortened URL](#business-logic-creating-a-shortened-url)
+  - [add the logic to save the shortened URL to a database.](#add-the-logic-to-save-the-shortened-url-to-a-database)
+- [Business logic: redirecting a short URL](#business-logic-redirecting-a-short-url)
+- [Business logic: Updating and deleting a short URL](#business-logic-updating-and-deleting-a-short-url)
+- [Business logic: return list of saved short URLs](#business-logic-return-list-of-saved-short-urls)
+- [API key authentication](#api-key-authentication)
+- [Unit test](#unit-test)
+- [Integration testing](#integration-testing)
+- [E2e testing](#e2e-testing)
+
 ## Setup
 
 - modules are used to organize your application into functional units.
